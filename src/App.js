@@ -3,8 +3,22 @@ import image from "./images/Mobile login-bro.png";
 import gicon from "./images/googleicon.svg";
 import ficon from "./images/ficon.png";
 import logo from "./images/logo.png";
+import * as AuthSession from 'expo-auth-session';
 
 function App() {
+  async function handleGooleSignIn(){
+    try{
+      const CLIENT_ID = "58715411209-nbcoe3ijato19pvok606ghfi8uab0fop.apps.googleusercontent.com";
+      const REDIRECT_URL ="http://localhost:3000";
+      const SCOPE = encodeURI("profile email");
+      const RESPONSE_TYPE = "token";
+      
+      const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL}&response_type${RESPONSE_TYPE}&scope&${SCOPE}`;
+    }catch(error){
+      console.log(error);
+    }
+
+  }
   return (
     <>
       <main>
